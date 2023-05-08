@@ -2,7 +2,7 @@
 
 ## Rama 'JS'
 
-En esta rama se creo un pequeño programa modular de consola en NodeJS que permite el cálculo de las K y las B locales, dadas una lisa de nodos y un par K y Q globales.
+En esta rama se creo un pequeño programa modular de consola en NodeJS que permite el cálculo de las K y las B locales, dadas una lista de nodos y un par K y Q globales.
 
 ### LISTAS DE NODOS
 
