@@ -89,7 +89,7 @@ LOCAL B:
 
 ```
 Posibles opciones:
-```bash
+```
 //Cierran el programa
 Again? n
 Again? No
