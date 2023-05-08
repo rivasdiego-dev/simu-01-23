@@ -10,7 +10,7 @@ let getLocals = true;
 let userPrompt, indexNode1, indexNode2, indexNode3;
 
 const options = yargs
- .usage("Usage: -k <global k value>")
+ .usage("Usage: -k <global k value> \n       -q <global q value>")
  .option("k", { alias: "global-k", describe: "The global k given", type: "number", demandOption: true })
  .option("q", { alias: "global-q", describe: "The global q given", type: "number", demandOption: true })
  .argv;
