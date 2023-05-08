@@ -89,7 +89,7 @@ LOCAL B:
 
 ```
 Posibles opciones:
-```js
+```bash
 //Cierran el programa
 Again? n
 Again? No
