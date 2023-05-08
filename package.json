@@ -1,0 +1,16 @@
+{
+  "name": "fem-2d",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Finite Element Method in 2 Dimensions",
+  "main": "bin/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rivasdiego-dev",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0",
+    "yargs": "13.2"
+  }
+}
