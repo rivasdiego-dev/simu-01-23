@@ -19,3 +19,11 @@ def get_local_k(K, node1, node2, node3):
     )
 
     return localK
+
+def get_local_b(Q, node1, node2, node3):
+    jacobian = get_jacobian(node1, node2, node3)
+    product = (Q * jacobian) / 6
+    aux_matrix = [[1], [1], [1]]
+    localB = multiply_constant_by_matrix(round(product,2), aux_matrix)
+
+    return localB
