@@ -1,7 +1,3 @@
-def print_matrix(matrix):
-    for row in matrix:
-        print(row)
-
 def transpose_matrix(M):
     rows = len(M)
     cols = len(M[0])
