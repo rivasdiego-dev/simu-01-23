@@ -1,9 +1,21 @@
-import importlib
+from matrices import *
 
-module_number = input("Enter the number of the node's list to import: ")
-nodeListModule = importlib.import_module(f'coordinates.nodes-{module_number}', package='.')
+def get_jacobian(node1, node2, node3):
+    return (
+        (node2["x"] - node1["x"]) * (node3["y"] - node1["y"]) -
+        (node3["x"] - node1["x"]) * (node2["y"] - node1["y"])
+    )
 
+def get_local_k(K, node1, node2, node3):
+    localK = 0
+    jacobian = get_jacobian(node1, node2, node3)
 
-nodeList = nodeListModule.nodeList
+    product = (K * (jacobian / 2)) / (jacobian * jacobian)
+    product = round(product,2)
 
-print(nodeList)
+    localK = multiply_constant_by_matrix(
+        product,
+        matrix_product(node1, node2, node3)
+    )
+
+    return localK
