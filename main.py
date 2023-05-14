@@ -1,6 +1,7 @@
 import importlib
 from printing import *
 from getLocals import *
+from getGlobals import *
 
 # Dynamic import
 module_number = input("Enter the number of the node's list to import: ")
@@ -10,13 +11,12 @@ nodeListModule = importlib.import_module(f'coordinates.nodes-{module_number}', p
 nodeList = nodeListModule.nodeList
 globalK = 0
 globalQ = 0
-localBs = []
-localKs = []
+assembled_b = []
+assembled_k = []
 connectivity_table = []
 
 # FUNC declaration 
 def display_menu():
-    clear_console()
     print("\nMenu:")
     print("1. Get locals from one element")
     print("2. Get locals from N elements")
@@ -38,11 +38,9 @@ def fill_table():
 def print_table():
     if connectivity_table == []:
         print("\nConnectivity table is empty...\n")
-        pause()
         return
     print("\n\tFinal connectivity table\n")
     print_matrix(connectivity_table)
-    pause()
 
 def one_element():
     if connectivity_table != []:
@@ -68,10 +66,7 @@ def one_element():
 def all_elements():
     if connectivity_table == []:
         print("\nConnectivity table is empty...\n")
-        pause()
         return
-    
-    
     
 # Main workflow
 
