@@ -12,8 +12,8 @@ globalK = 0
 globalQ = 0
 assembled_b = []
 assembled_k = []
-assembled_local_ks = []
-assembled_local_bs = []
+local_ks = []
+local_bs = []
 connectivity_table = []
 
 # FUNC declaration 
@@ -71,16 +71,16 @@ def assemble_elements():
     else:
         for row in connectivity_table:
             node1, node2, node3 = row
-            assembled_local_ks.append(get_local_k(globalK, nodeList[node1-1], nodeList[node2-1], nodeList[node3-1]))
-            assembled_local_bs.append(get_local_b(globalQ, nodeList[node1-1], nodeList[node2-1], nodeList[node3-1]))
+            local_ks.append(get_local_k(globalK, nodeList[node1-1], nodeList[node2-1], nodeList[node3-1]))
+            local_bs.append(get_local_b(globalQ, nodeList[node1-1], nodeList[node2-1], nodeList[node3-1]))
         print("\n\tLocal Ks:\n")
-        print_locals(assembled_local_ks)
+        print_locals(local_ks)
         print("\n\tLocal Bs:\n")
-        print_locals(assembled_local_bs)
+        print_locals(local_bs)
         
         
-        assembled_k = assemble_global_k(nodeList,assembled_local_ks,connectivity_table)
-        assembled_b = assemble_global_b(nodeList,assembled_local_bs, connectivity_table)
+        assembled_k = assemble_global_k(nodeList,local_ks,connectivity_table)
+        assembled_b = assemble_global_b(nodeList,local_bs, connectivity_table)
         
         print("\n\tAssembled K:\n")
         print_matrix(assembled_k)
@@ -90,8 +90,11 @@ def assemble_elements():
             
 # Main workflow
 
-globalK = float(input("Please, enter the global K value: "))
-globalQ = float(input("Please, enter the global Q value: "))
+#globalK = float(input("Please, enter the global K value: "))
+#globalQ = float(input("Please, enter the global Q value: "))
+
+globalK = 16
+globalQ = 700
 
 connectivity_table = [
     [1, 4, 2],
