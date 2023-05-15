@@ -78,7 +78,6 @@ def assemble_elements():
         print("\n\tLocal Bs:\n")
         print_locals(local_bs)
         
-        
         assembled_k = assemble_global_k(nodeList,local_ks,connectivity_table)
         assembled_b = assemble_global_b(nodeList,local_bs, connectivity_table)
         
@@ -87,25 +86,12 @@ def assemble_elements():
         print("\n\tAssembled B:\n")
         print_matrix(assembled_b)
         
-            
 # Main workflow
-
-#globalK = float(input("Please, enter the global K value: "))
-#globalQ = float(input("Please, enter the global Q value: "))
-
-globalK = 16
-globalQ = 700
-
-connectivity_table = [
-    [1, 4, 2],
-    [3, 2, 4],
-    [7, 4, 1],
-    [5, 4, 7],
-    [6, 5, 7],
-    [8, 7, 1],
-]
+globalK = float(input("Please, enter the global K value: "))
+globalQ = float(input("Please, enter the global Q value: "))
 
 display_menu()
+
 while True:
     choice = input("Enter your choice: ")
 
